@@ -1,4 +1,5 @@
 #!/bin/zsh
+# version 1.2
 idx=${1:-0}
 for mkt in {ZH-CN,EN-US,EN-GB,EN-CA,EN-IN,JA-JP,FR-FR,DE-DE,ES-ES,PT-BR,IT-IT}
 do
@@ -15,4 +16,4 @@ done
 [[ $(git status --porcelain) ]] || exit
 git add img metadata.csv
 git commit -m "Fetch: $enddate"
-git push
+[[ $idx -eq 0 ]] && git push
