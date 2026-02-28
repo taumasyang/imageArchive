@@ -1,0 +1,21 @@
+name: Fetch
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Configure Git
+        run: |
+          git config user.name tauyoung
+          git config user.email tauyoung@icloud.com
+      - name: Fetch
+        run: ./fetch.zsh
