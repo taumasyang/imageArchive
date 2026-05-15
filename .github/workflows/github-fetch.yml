@@ -17,9 +17,9 @@ jobs:
         run: |
           git config user.name tauyoung
           git config user.email tauyoung@icloud.com
-      - name: Ensure xmllint and zsh
+      - name: Ensure zsh
         run: |
           sudo apt-get update
-          sudo apt-get install --no-install-recommends -y libxml2-utils zsh
+          sudo apt-get install --no-install-recommends -y zsh
       - name: Fetch
         run: ./fetch.zsh
